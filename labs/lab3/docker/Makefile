@@ -83,28 +83,28 @@ lb-up:
 	docker-compose up -d lb
 
 lb-config:
-	docker exec dockerlocal_lb_1 cat haproxy.cfg
+	docker exec docker_lb_1 cat haproxy.cfg
 
 mysql-compose-shell:
-	docker exec -it dockerlocal_mysql_1 bash
+	docker exec -it docker_mysql_1 bash
 
 gumball-compose-shell-1:
-	docker exec -it dockerlocal_gumball_1 bash
+	docker exec -it docker_gumball_1 bash
 
 gumball-compose-shell-2:
-	docker exec -it dockerlocal_gumball_2 bash
+	docker exec -it docker_gumball_2 bash
 
 gumball-logs-1:
-	docker logs dockerlocal_gumball_1
+	docker logs docker_gumball_1
 
 gumball-logs-2:
-	docker logs dockerlocal_gumball_2
+	docker logs docker_gumball_2
 
 gumball-logs-3:
-	docker logs dockerlocal_gumball_3
+	docker logs docker_gumball_3
 
 gumball-logs-4:
-	docker logs dockerlocal_gumball_4
+	docker logs docker_gumball_4
 
 
 

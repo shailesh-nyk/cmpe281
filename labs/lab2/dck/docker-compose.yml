@@ -3,7 +3,7 @@ version: "3"
 
 services:
   phptest:
-    image: paulnguyen/phptest
+    image: snayakk/phptest
     volumes:
       - /tmp:/tmp
     networks:
