@@ -8,7 +8,13 @@ import (
 	"time"
 )
 
+
+
 func main() {
-	fmt.Println("Welcome to the playground!")
-	fmt.Println("The time is", time.Now())
+
+	var a = "Shailesh"
+	fmt.Println(a)
+	a = 12
+	fmt.Println(a)
+	
 }

@@ -2,7 +2,7 @@
 
 # Container
 
-ACCOUNT=""
+ACCOUNT="snayakk"
 CONTAINER="phptest"
 VERSION="v1"
 
@@ -12,7 +12,7 @@ OPT=""
 OPT1=""
 OPT2=""
 DEBUG="TRUE"
-AUTH="FALSE"
+AUTH="TRUE"
 XMENU="N"
 
 ## Set Echo Command Flavor

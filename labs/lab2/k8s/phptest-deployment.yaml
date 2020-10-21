@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       name: phptest
-  replicas: 2 # tells deployment to run 2 pods matching the template
+  replicas: 5 # tells deployment to run 2 pods matching the template
   template: # create pods using pod definition in this template
     metadata:
       # unlike pod.yaml, the name is not included in the meta data as a unique name is
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: phptest
-        image: paulnguyen/phptest
+        image: snayakk/phptest:v2
         ports:
         - containerPort: 80
 

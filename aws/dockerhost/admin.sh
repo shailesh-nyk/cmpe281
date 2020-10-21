@@ -7,7 +7,7 @@ OPT=""
 OPT1=""
 OPT2=""
 DEBUG="TRUE"
-AUTH="FALSE"
+AUTH="TRUE"
 
 ## Set Echo Command Flavor
 

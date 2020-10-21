@@ -11,11 +11,11 @@ CREATE SCHEMA IF NOT EXISTS `cmpe281` DEFAULT CHARACTER SET utf8 COLLATE utf8_ge
 USE `cmpe281` ;
 
 -- -----------------------------------------------------
--- Table `cmpe281`.`PERSON`
+-- Table `cmpe281`.`person`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `cmpe281`.`PERSON` ;
+DROP TABLE IF EXISTS `cmpe281`.`person` ;
 
-CREATE TABLE IF NOT EXISTS `cmpe281`.`PERSON` (
+CREATE TABLE IF NOT EXISTS `cmpe281`.`person` (
   `person_id` INT NOT NULL,
   `first_name` VARCHAR(80) NULL,
   `last_name` VARCHAR(80) NULL,
@@ -26,11 +26,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `cmpe281`.`AWARDS`
+-- Table `cmpe281`.`awards`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `cmpe281`.`AWARDS` ;
+DROP TABLE IF EXISTS `cmpe281`.`awards` ;
 
-CREATE TABLE IF NOT EXISTS `cmpe281`.`AWARDS` (
+CREATE TABLE IF NOT EXISTS `cmpe281`.`awards` (
   `award_id` INT NOT NULL,
   `award_name` VARCHAR(80) NULL,
   `awarded_by` VARCHAR(80) NULL,
@@ -39,11 +39,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `cmpe281`.`PERSON_AWARDS`
+-- Table `cmpe281`.`person_awards`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `cmpe281`.`PERSON_AWARDS` ;
+DROP TABLE IF EXISTS `cmpe281`.`person_awards` ;
 
-CREATE TABLE IF NOT EXISTS `cmpe281`.`PERSON_AWARDS` (
+CREATE TABLE IF NOT EXISTS `cmpe281`.`person_awards` (
   `person_id` INT NOT NULL,
   `award_id` INT NOT NULL,
   `awarded_year` DATETIME NULL,
@@ -51,23 +51,23 @@ CREATE TABLE IF NOT EXISTS `cmpe281`.`PERSON_AWARDS` (
   INDEX `fk_PERSON_AWARDS_AWARDS1_idx` (`award_id` ASC),
   CONSTRAINT `fk_PERSON_AWARDS_PERSON1`
     FOREIGN KEY (`person_id`)
-    REFERENCES `cmpe281`.`PERSON` (`person_id`)
+    REFERENCES `cmpe281`.`person` (`person_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_PERSON_AWARDS_AWARDS1`
     FOREIGN KEY (`award_id`)
-    REFERENCES `cmpe281`.`AWARDS` (`award_id`)
+    REFERENCES `cmpe281`.`awards` (`award_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `cmpe281`.`CONTRIBS`
+-- Table `cmpe281`.`contribs`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `cmpe281`.`CONTRIBS` ;
+DROP TABLE IF EXISTS `cmpe281`.`contribs` ;
 
-CREATE TABLE IF NOT EXISTS `cmpe281`.`CONTRIBS` (
+CREATE TABLE IF NOT EXISTS `cmpe281`.`contribs` (
   `contrib_id` INT NOT NULL,
   `person_id` INT NOT NULL,
   `contribution` VARCHAR(80) NULL,
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `cmpe281`.`CONTRIBS` (
   INDEX `fk_CONTRIBS_PERSON_idx` (`person_id` ASC),
   CONSTRAINT `fk_CONTRIBS_PERSON`
     FOREIGN KEY (`person_id`)
-    REFERENCES `cmpe281`.`PERSON` (`person_id`)
+    REFERENCES `cmpe281`.`person` (`person_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
